@@ -7,8 +7,11 @@ import { AppComponent } from './app.component';
 import { CustomerComponent } from './customer/customer.component';
 import { OrdersComponent } from './orders/orders.component';
 import { SearchBoxDirective } from './search-box.directive';
-import { SalesData2Service } from './sales-data2.service';
-import { InitCapsPipe } from './shared/init-caps.pipe';
+import {SalesDataService} from './sales-data.service';
+import {SalesData2Service} from './sales-data2.service';
+import {InitCapsPipe} from './shared/init-caps.pipe';
+import {LoginModule} from './login/login.module'
+
 
 @NgModule({
   declarations: [
@@ -21,9 +24,10 @@ import { InitCapsPipe } from './shared/init-caps.pipe';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    LoginModule
   ],
-  providers: [SalesData2Service],
+  providers: [SalesDataService, SalesData2Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
